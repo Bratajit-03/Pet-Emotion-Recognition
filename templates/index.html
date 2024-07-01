@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Emotion Recognition</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            height: 100%;
+            background: linear-gradient(to bottom right, #3498db, #9b59b6);
+            margin: 0;
+            text-align: center;
+            padding: 0;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .big-heading {
+            font-size: 3rem;
+            font-weight: bold;
+            background-color: #1f0982;
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding-top: 50px;
+        }
+        .card {
+            padding: 30px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            background-color: #2980b9;
+            border-color: #2980b9;
+        }
+        .btn-primary:hover {
+            background-color: #1a5e8c;
+            border-color: #1a5e8c;
+        }
+        #blah {
+            max-width: 100%;
+            height: auto;
+            display: none;
+        }
+    </style>
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    var img = document.getElementById('blah');
+                    img.src = e.target.result;
+                    img.style.display = 'block';
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+</head>
+<body>
+    {% if message %}
+        <div class="alert alert-danger">{{ message }}</div>
+    {% endif %}
+    <div class="container">
+        <div class="row justify-content-center" style="margin-bottom: 50px;">
+            <div class="col-md-12">
+                <center><h1 class="big-heading">Pet's Emotion Recognition</h1></center>
+                <div class="card card-body">
+                    <center><h2>Please upload Facial expression of your Pet:</h2></center>
+                    <form class="form-horizontal" action="{{ url_for('pet_emotion_predictPage') }}" method="POST" enctype="multipart/form-data">
+                        <br>
+                        <center>
+                            <input onchange="readURL(this);" type="file" name="image" placeholder="Upload Image">
+                            <br><br>
+                            <img class="img-fluid" id="blah" src="#" alt="UPLOADED IMAGE WILL APPEAR HERE" />
+                            <br><br>
+                            <button class="btn btn-primary" value="pet-emotion-predict">Track Emotion</button>
+                        </center>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

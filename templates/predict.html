@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Emotion Detection</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            height: 100vh; 
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom right, #3498db, #f0f8ff); 
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            padding: 50px;
+            background: rgba(255, 255, 255, 0.9); 
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .result-heading {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #3498db; 
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .emotion-result {
+            font-size: 2.5rem;
+            font-weight: bold;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        .emotion-angry {
+            background-color: #f44336; 
+            color: white;
+        }
+        .emotion-happy {
+            background-color: #4caf50; 
+            color: white;
+        }
+        .emotion-relaxed {
+            background-color: #f85605d3; 
+            color: white;
+        }
+        .emotion-sad {
+            background-color: #0071b6; 
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="result-heading">Your pet's emotion is likely to be:</h1>
+        {% if pred is not none %}
+            {% if pred == 0 %}
+                <div class="emotion-result emotion-angry">ANGRY</div>
+            {% elif pred == 1 %}
+                <div class="emotion-result emotion-happy">HAPPY</div>
+            {% elif pred == 2 %}
+                <div class="emotion-result emotion-relaxed">RELAXED</div>
+            {% else %}
+                <div class="emotion-result emotion-sad">SAD</div>
+            {% endif %}
+        {% else %}
+            <div class="emotion-result alert alert-warning">Prediction not available.</div>
+        {% endif %}
+    </div>
+</body>
+</html>
