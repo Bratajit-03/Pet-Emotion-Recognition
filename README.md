@@ -4,7 +4,7 @@
 
 ## Screenshots:
 
-| ![screenshot 1](https://github.com/Bratajit-03/Pet-Emotion-Recognition/assets/106532791/cf18d3df-1b99-4cc1-b17e-582c3f644393) | ![image](https://github.com/Bratajit-03/Pet-Emotion-Recognition/assets/106532791/e9589581-eb3d-437f-a467-8ffff0e0dd0d)|
+| ![screenshot 1](https://github.com/Bratajit-03/Pet-Emotion-Recognition/assets/106532791/cf18d3df-1b99-4cc1-b17e-582c3f644393) | ![screenshot-2](https://github.com/Bratajit-03/Pet-Emotion-Recognition/assets/106532791/5d960dc4-918c-4622-ad8f-ee1d9754d716)|
 |:--:|:--:|
 | *Home Page* | *Result page* |
 
@@ -43,7 +43,7 @@
 
 ## Dataset:
 
-The Dataset used in this project can be acquire from - [Kaggle](https://www.kaggle.com/datasets/anshtanwar/pets-facial-expression-dataset).
+The Dataset used in this project can be acquired from - [Kaggle](https://www.kaggle.com/datasets/anshtanwar/pets-facial-expression-dataset).
 
 ## License:
 
