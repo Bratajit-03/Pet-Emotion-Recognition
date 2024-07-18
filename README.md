@@ -39,6 +39,7 @@
 - **Frontend**: HTML, CSS, Bootstrap
 - **Backend**: Flask
 - **Machine Learning**: TensorFlow, Keras, Scikit-learn
+- **Model**: MobileNetV2
 - **Data Manipulation**: NumPy, pandas, Matplotlib
 
 ## Dataset:
